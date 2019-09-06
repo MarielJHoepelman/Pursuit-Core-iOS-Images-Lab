@@ -17,6 +17,7 @@
 		58FEBE0823230C550086D61B /* RandomUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FEBE0723230C550086D61B /* RandomUserViewController.swift */; };
 		58FEBE0E232310340086D61B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FEBE0D232310340086D61B /* NetworkManager.swift */; };
 		58FEBE11232310860086D61B /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FEBE10232310860086D61B /* AppError.swift */; };
+		58FEBE13232311080086D61B /* ComicsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FEBE12232311080086D61B /* ComicsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		58FEBE0723230C550086D61B /* RandomUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserViewController.swift; sourceTree = "<group>"; };
 		58FEBE0D232310340086D61B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		58FEBE10232310860086D61B /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		58FEBE12232311080086D61B /* ComicsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		58FEBDE2232309B90086D61B /* API-images-lab */ = {
 			isa = PBXGroup;
 			children = (
+				58FEBE142323110B0086D61B /* Models */,
 				58FEBE0F2323103B0086D61B /* HelperFiles */,
 				58FEBDE3232309B90086D61B /* AppDelegate.swift */,
 				58FEBE0A23230C6C0086D61B /* View */,
@@ -130,6 +133,14 @@
 				58FEBE10232310860086D61B /* AppError.swift */,
 			);
 			path = HelperFiles;
+			sourceTree = "<group>";
+		};
+		58FEBE142323110B0086D61B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				58FEBE12232311080086D61B /* ComicsModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 				58FEBE11232310860086D61B /* AppError.swift in Sources */,
 				58FEBE0E232310340086D61B /* NetworkManager.swift in Sources */,
 				58FEBE0623230C160086D61B /* PokemonViewController.swift in Sources */,
+				58FEBE13232311080086D61B /* ComicsModel.swift in Sources */,
 				58FEBDE4232309B90086D61B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
