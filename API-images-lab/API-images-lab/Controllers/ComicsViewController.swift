@@ -9,25 +9,33 @@
 import UIKit
 
 class ComicsViewController: UIViewController {
-
-
+ 
+    @IBOutlet weak var comicsImageView: UIImageView!
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var comicstextField: UITextField!
+    @IBOutlet weak var mostRecentButton: UIButton!
+    @IBOutlet weak var randomComicButton: UIButton!
+    
+    var comics: ComicsFromJSON!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(comics)
+//        comicstextField.text = comics.safe_title
 
     }
     
-
+    private func loadData() {
+        ComicsFromJSON.getComics { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let comicsFromOnline):
+                    self.comics = comicsFromOnline
+                case .failure(let error) :
+                    print(error)
+                }
+            }
+        }
+    }
 }
 
-extension ComicsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-    
-}

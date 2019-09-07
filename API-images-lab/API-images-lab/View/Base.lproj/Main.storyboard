@@ -17,10 +17,40 @@
                     <view key="view" contentMode="scaleToFill" id="LRv-8U-O4O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sDG-eS-QRs">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="LgE-4T-LL6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="d8W-2m-6yh">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d8W-2m-6yh" id="MJx-LX-lco">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J2A-u7-Lbu" firstAttribute="bottom" secondItem="sDG-eS-QRs" secondAttribute="bottom" id="0Uf-9J-4Tk"/>
+                            <constraint firstItem="J2A-u7-Lbu" firstAttribute="trailing" secondItem="sDG-eS-QRs" secondAttribute="trailing" id="7P2-8D-ZG2"/>
+                            <constraint firstItem="sDG-eS-QRs" firstAttribute="leading" secondItem="J2A-u7-Lbu" secondAttribute="leading" id="J15-7h-8Qq"/>
+                            <constraint firstItem="sDG-eS-QRs" firstAttribute="top" secondItem="J2A-u7-Lbu" secondAttribute="top" id="U7L-dI-W8r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="J2A-u7-Lbu"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jy7-qq-8up"/>
+                    <connections>
+                        <outlet property="pokemonTableView" destination="sDG-eS-QRs" id="fPh-zI-Cq2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3l-xw-l7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +80,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPS-Ot-b3K">
-                                <rect key="frame" x="69" y="621" width="83" height="30"/>
+                                <rect key="frame" x="70" y="621" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Most recent"/>
                             </button>
@@ -64,6 +94,13 @@
                         <viewLayoutGuide key="safeArea" id="Ov8-SO-U98"/>
                     </view>
                     <navigationItem key="navigationItem" id="SIp-tz-Ewj"/>
+                    <connections>
+                        <outlet property="comicsImageView" destination="t2s-SI-1IF" id="Ive-Se-ye8"/>
+                        <outlet property="comicstextField" destination="2Ky-SS-RLL" id="aGi-ur-S76"/>
+                        <outlet property="mostRecentButton" destination="DPS-Ot-b3K" id="tUd-dV-srK"/>
+                        <outlet property="randomComicButton" destination="8i8-d0-qSv" id="QgS-cq-VCz"/>
+                        <outlet property="stepper" destination="3pk-bh-4X5" id="ZaT-ez-ECu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8S-my-pm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

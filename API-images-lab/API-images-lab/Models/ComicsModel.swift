@@ -20,4 +20,22 @@ struct ComicsFromJSON: Codable {
     let img: String
     let tittle: String
     let day: String
+    
+    static func getComics(completionHandler: @escaping (Result<ComicsFromJSON,AppError>) -> () ) {
+        let url = "http://xkcd.com/614/info.0.json"
+        
+        NetworkManager.shared.fetchData(urlString: url) { (result) in
+            switch result {
+            case .failure(let error):
+                completionHandler(.failure(error))
+            case .success(let data):
+                do {
+                    let comics = try JSONDecoder().decode(ComicsFromJSON.self, from: data)
+                    completionHandler(.success(comics))
+                } catch {
+                    completionHandler(.failure(.badJSONError))
+                }
+            }
+        }
+    }
 }

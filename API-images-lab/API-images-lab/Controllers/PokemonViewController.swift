@@ -10,21 +10,41 @@ import UIKit
 
 class PokemonViewController: UIViewController {
 
+    @IBOutlet weak var pokemonTableView: UITableView!
+    
+    var pokemons: PokemonWrapper!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        pokemonTableView.dataSource = self
+        loadData()
+        super.viewDidLoad()
+        print(pokemons)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func loadData() {
+        PokemonWrapper.getPokemon { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let pokemons):
+                    self.pokemons = pokemons
+                }
+            }
+        }
     }
-    */
 
+}
+
+extension PokemonViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
 }
