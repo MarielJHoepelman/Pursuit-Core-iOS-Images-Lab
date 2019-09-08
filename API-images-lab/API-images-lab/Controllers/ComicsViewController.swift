@@ -16,13 +16,17 @@ class ComicsViewController: UIViewController {
     @IBOutlet weak var mostRecentButton: UIButton!
     @IBOutlet weak var randomComicButton: UIButton!
     
-    var comics: ComicsFromJSON!
+    var comics: ComicsFromJSON! {
+        didSet {
+            setDataToView()
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(comics)
-//        comicstextField.text = comics.safe_title
-
+        loadData()
     }
     
     private func loadData() {
@@ -36,6 +40,10 @@ class ComicsViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func setDataToView() -> Void {
+        comicstextField.text = comics?.safe_title
     }
 }
 

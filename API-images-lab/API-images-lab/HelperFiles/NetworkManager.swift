@@ -8,6 +8,7 @@
 
 
 import Foundation
+
 class NetworkManager {
 
     private init() {}
