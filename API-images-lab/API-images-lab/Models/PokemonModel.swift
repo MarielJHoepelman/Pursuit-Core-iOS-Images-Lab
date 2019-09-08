@@ -21,6 +21,7 @@ struct PokemonWrapper: Codable {
             case .success(let data):
                 do {
                     let pokemons = try JSONDecoder().decode(PokemonWrapper.self, from: data)
+                    print(pokemons)
                     completionHandler(.success(pokemons))
                 } catch {
                     completionHandler(.failure(.badJSONError))                }
@@ -33,9 +34,10 @@ struct PokemonWrapper: Codable {
 
 struct Cards: Codable {
     let name: String
-    let weaknesses: [Weaknesses]
-    let types: String
+    let weaknesses: [Weaknesses]?
+    let types: [String]?
     let set: String
+    let imageUrl: String
 }
 
 struct Weaknesses: Codable {

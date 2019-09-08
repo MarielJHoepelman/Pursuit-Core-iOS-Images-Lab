@@ -12,14 +12,16 @@ class PokemonViewController: UIViewController {
 
     @IBOutlet weak var pokemonTableView: UITableView!
     
-    var pokemons: PokemonWrapper!
+    var pokemons: PokemonWrapper! {
+        didSet {
+//            print(pokemons!)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pokemonTableView.dataSource = self
         loadData()
-        super.viewDidLoad()
-        print(pokemons)
     }
     
     private func loadData() {
