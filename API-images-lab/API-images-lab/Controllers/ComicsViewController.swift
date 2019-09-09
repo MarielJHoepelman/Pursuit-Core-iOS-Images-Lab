@@ -22,15 +22,25 @@ class ComicsViewController: UIViewController {
         }
     }
     
+    var comicId:Int = 1
     
+    var url: String {
+        return "https://xkcd.com/\(comicId)/info.0.json"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
     }
     
+    
+    @IBAction func stepperClick(_ sender: UIStepper) {
+        comicId = Int(sender.value)
+        loadData()
+    }
+    
     private func loadData() {
-        ComicsFromJSON.getComics { (result) in
+        ComicsFromJSON.getComics(url: url) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let comicsFromOnline):
